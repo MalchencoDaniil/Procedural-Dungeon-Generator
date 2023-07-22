@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06dbfde9ed7ded48b75c8d814bc1a04, type: 3}
+  m_Name: DemoLevel
+  m_EditorClassIdentifier: 
+  percentToFill: 0.2
+  minRoomSizeWorldUnits: {x: 40, y: 40, z: 40}
+  maxRoomSizeWorldUnits: {x: 40, y: 40, z: 40}
+  walls:
+  - {fileID: 1308284858505769366, guid: 10c66183de466234b85a885856a0e30d, type: 3}
+  - {fileID: 6120150313081317407, guid: b2ea41c20e670d0408c9d1ca97a9c977, type: 3}
+  floors:
+  - {fileID: 874727438945628809, guid: 27253b87e8102064797ce903aa404648, type: 3}
+  - {fileID: 5130420309749845036, guid: 80e7d4b4e50a48546ad8851da55b9a9a, type: 3}
+  - {fileID: 8434888734380331389, guid: c587da9a5a24721499edad30da066a2e, type: 3}
+  sky: {fileID: 2100000, guid: 9fdd93af1873ed9448f90ea996e835ed, type: 2}
+  player: {fileID: 8249839715556492290, guid: c362657fc0fa2bd4d8d6be48411a2d4b, type: 3}
