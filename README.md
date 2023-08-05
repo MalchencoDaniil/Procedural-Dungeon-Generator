@@ -26,3 +26,48 @@ Feel free to use it in your own projects if you want!😊
 #
     6.Press Start!
 ![Снимок экрана (279)](https://github.com/MalchencoDaniil/ProceduralDungeonGenerator/assets/109500163/31ebc87c-79e5-4e62-a1b9-72d7f681cea8)
+
+# Dungeon Generator code tutorial!
+    
+Level Data Script
+
+# 
+    [Space(15)] 
+    [Header("Chance Spawn Objects")]     
+    [SerializeField, Range(0, 1)] public float ToWall = 2.0f;     
+    [SerializeField, Range(0, 1)] public float ToFloor = 2.0f; 
+         
+    [Space(15)] 
+    [Header("Prefabs of Objects")]    
+    public GameObject[] floorObjects;     
+    public GameObject[] wallObjects
+    
+
+Level Generator Script
+
+#
+    private void SpawnObjectOnFloor(int x, int z)     
+    {         
+        if (levelData.gridSpace[x, z] == LevelData.GridSpace.Floor && Random.value < levelData.ToFloor)         
+        {             
+            GameObject _randomObject = levelData.floorObjects[Random.Range(0, levelData.floorObjects.Length)];              
+            Spawn(x, position.y?, z, _randomObject);         
+        }     
+    }    
+    private void SpawnObjectOnWall(int x, int z)      
+    {              
+        if (levelData.gridSpace[x, z] == LevelData.GridSpace.Wall && Random.value < levelData.ToWall)             
+        {                      
+            GameObject _randomObject = levelData.wallObjects[Random.Range(0, levelData.wallObjects.Length)];                       
+            Spawn(x, position.y?, z, _randomObject);              
+        }     
+    }
+    for (int x = 0; x < levelData.roomWidth; x++)           
+    {                       
+        for (int z = 0; z < levelData.roomDepth; z++)            
+        {                                   
+            PlayerSpawn(x, z);                                   
+            SpawnObjectOnFloor(x, z);                  
+            SpawnObjectOnWall(x, z);                           
+        }              
+    }
